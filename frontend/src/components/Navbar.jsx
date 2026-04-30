@@ -18,7 +18,7 @@ const Navbar = () => {
           {/* Logo */}
           <div className='flex items-center gap-2 cursor-pointer bg-white/5 p-2 px-4 rounded-2xl border border-zinc-600'>
             <img src='ai2.png' alt='' />
-            <span className='font-semibold text-lg bg-linear-to-r from-purple-400 to-indigo-500 bg-clip-text text-transparent'>Nexora AI</span>
+            <span className='font-semibold text-lg bg-linear-to-r from-green-400 to-green-500 bg-clip-text text-transparent'>Nexora AI</span>
           </div>
           {/* right side */}
           <div className='flex items-center gap-5'>
