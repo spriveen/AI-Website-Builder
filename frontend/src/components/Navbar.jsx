@@ -5,7 +5,7 @@ import { Coins } from "lucide-react";
 
 const Navbar = () => {
   const navigate = useNavigate()
-  let userData = true
+  let userData = false
   return (
     <>
       <motion.div
@@ -48,7 +48,7 @@ const Navbar = () => {
               </div>
             ):(
               <button
-              className='px-5 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-700 font-semibold
+              className='px-5 py-2 rounded-xl bg-green-500 hover:bg-green-600 font-semibold
               text-sm transition text-white'
               >
                Login

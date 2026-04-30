@@ -1,6 +1,6 @@
 import React from 'react'
 import Navbar from '../components/Navbar'
-import { ArrowRight, Sparkles } from 'lucide-react'
+import { ArrowRight, Download, LayoutTemplate, Sparkles, Zap } from 'lucide-react'
 import { motion } from 'motion/react'
 
 const Home = () => {
@@ -62,11 +62,35 @@ const Home = () => {
             >
               <button className='flex items-center justify-center gap-2 px-6 py-3 bg-green-500
               hover:bg-green-600 rounded-xl font-semibold transition'>
-                Start Building <ArrowRight />
+                Start Building <ArrowRight size={18} />
                 </button>
                 <button className='px-6 py-3 border border-white/20 hover:bg-white/10 rounded-xl
                 transition'>Live Preview</button>
             </motion.div>
+
+            {/* feature card */}
+            <div className='grid grid-cols-1 md:grid-cols-3 gap-6 mt-20'>
+              <div className='p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur
+              hover:border-green-400 transition'>
+                <Zap className='text-yellow-400 mb-4'/>
+                <h3 className='font-semibold text-lg mb-2 '>Instant Generation</h3>
+                <p className='text-sm text-gray-400'>Describe your website and AI generate it instantly</p>
+              </div>
+
+              <div className='p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur
+              hover:border-green-400 transition'>
+                <LayoutTemplate className='text-red-400 mb-4'/>
+                <h3 className='font-semibold text-lg mb-2 '>Responsive Layout</h3>
+                <p className='text-sm text-gray-400'>Website look perfect on mobile, tablet and dekstop instantly</p>
+              </div>
+
+              <div className='p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur
+              hover:border-green-400 transition'>
+                <Download className='text-blue-400 mb-4'/>
+                <h3 className='font-semibold text-lg mb-2 '>Export Code</h3>
+                <p className='text-sm text-gray-400'>Download clean HTML, CSS and JS instantly</p>
+              </div>
+              </div>
         </div>
       </section>
     </>
