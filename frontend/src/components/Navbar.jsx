@@ -1,10 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { motion } from 'motion/react'
 import { useNavigate } from 'react-router-dom'
 import { Coins } from "lucide-react";
+import LoginModal from './LoginModal';
 
 const Navbar = () => {
   const navigate = useNavigate()
+  const [openLogin, setOpenLogin] = useState(false)
   let userData = false
   return (
     <>
@@ -48,6 +50,7 @@ const Navbar = () => {
               </div>
             ):(
               <button
+              onClick={()=>setOpenLogin(true)}
               className='px-5 py-2 rounded-xl bg-green-500 hover:bg-green-600 font-semibold
               text-sm transition text-white'
               >
@@ -59,6 +62,10 @@ const Navbar = () => {
           </div>
         </div>
       </motion.div>
+
+      {openLogin && (
+        <LoginModal open={openLogin} onClose={()=> setOpenLogin(false)}/>
+      )}
     </>
   )
 }
