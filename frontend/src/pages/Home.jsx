@@ -1,6 +1,6 @@
 import React from 'react'
 import Navbar from '../components/Navbar'
-import { Sparkles } from 'lucide-react'
+import { ArrowRight, Sparkles } from 'lucide-react'
 import { motion } from 'motion/react'
 
 const Home = () => {
@@ -41,7 +41,32 @@ const Home = () => {
           transition={{duration:0.7}}
           className='text-5xl md:text-7xl font-bold leading-tight'>
             Build Website with <br /> 
-            <span className='bg-linear-to-r from-yellow-400 to-green-500 bg-clip-text text-transparent'>AI in Seconds</span> </motion.h1>
+            <span className='bg-linear-to-r from-yellow-400 to-green-500 bg-clip-text text-transparent'>AI in Seconds</span> 
+            </motion.h1>
+
+            {/* description */}
+            <motion.p
+             initial={{opacity:0, y:20}}
+             animate={{opacity:1, y:0}}
+            transition={{duration:0.2}}
+            className='max-w-2xl mx-auto mt-6 text-lg text-gray-400'
+            >Create beautiful, fully responsive websites in seconds with AI. No coding skills needed ideal for startups, creators, and modern businesses.
+            </motion.p>
+            
+            {/* buttons */}
+            <motion.div
+             initial={{opacity:0, y:20}}
+             animate={{opacity:1, y:0}}
+            transition={{duration:0.3}}
+            className='flex flex-col sm:flex-row justify-center gap-4 mt-10 '
+            >
+              <button className='flex items-center justify-center gap-2 px-6 py-3 bg-green-500
+              hover:bg-green-600 rounded-xl font-semibold transition'>
+                Start Building <ArrowRight />
+                </button>
+                <button className='px-6 py-3 border border-white/20 hover:bg-white/10 rounded-xl
+                transition'>Live Preview</button>
+            </motion.div>
         </div>
       </section>
     </>
