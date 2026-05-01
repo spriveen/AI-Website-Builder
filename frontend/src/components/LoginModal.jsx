@@ -26,7 +26,7 @@ const LoginModal = ({ open, onClose }) => {
 
       dispatch(setUserData(response.data))
 
-      console.log("Login success:", response.data)
+      // console.log("Login success:", response.data)
 
       // close modal
       onClose()
