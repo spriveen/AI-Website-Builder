@@ -1,36 +1,40 @@
-import mongoose from "mongoose"
+import mongoose from "mongoose";
 
-const messageSchema = new mongoose.Schema({
-    role:{
-        type:String,
-        enum:["user", "ai"],
-        required:true
+const messageSchema = new mongoose.Schema(
+  {
+    role: {
+      type: String,
+      enum: ["user", "ai"],
+      required: true,
     },
-    content:{
-        type:String,
-        required:true
-    }
-},{timestamps:true})
-
-const websiteSchema = new mongoose.Schema({
-    user:{
-        type:mongoose.Schema.Types.ObjectId,
-        ref:"User"
+    content: {
+      type: String,
+      required: true,
     },
-    title:{
-        type:String,
-        default:"United Website"
+  },
+  { timestamps: true },
+);
+
+const websiteSchema = new mongoose.Schema(
+  {
+    user: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User",
     },
-    latestCode:{
-        type:String,
-        required:true
+    title: {
+      type: String,
+      default: "United Website",
     },
- conversation:[messageSchema],
- deployed:{type:Boolean, default:false},
- deployedUrl:{type:String},
- slug:{type:String, unique:true}
+    latestCode: {
+      type: String,
+      required: true,
+    },
+    conversation: [messageSchema],
+    deployed: { type: Boolean, default: false },
+    deployedUrl: { type: String },
+    slug: { type: String, unique: true },
+  },
+  { timestamps: true },
+);
 
-
-},{timestamps:true})
-
-export const Website = mongoose.model("Website", websiteSchema)
+export const Website = mongoose.model("Website", websiteSchema);

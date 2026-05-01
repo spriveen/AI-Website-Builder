@@ -2,6 +2,7 @@ import express from 'express'
 import 'dotenv/config'
 import connectDB from './database/db.js'
 import authRoute from './routes/authRoute.js'
+import websiteRoute from './routes/websiteRoute.js'
 import cookieParser from 'cookie-parser'
 import cors from 'cors'
 
@@ -17,6 +18,7 @@ app.use(cors({
 }))
 
 app.use('/api/auth', authRoute)
+app.use('/api/website', websiteRoute)
 
 // http:localhost:8000/api/auth/google
 
