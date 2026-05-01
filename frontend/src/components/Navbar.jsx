@@ -3,11 +3,14 @@ import { motion } from 'motion/react'
 import { useNavigate } from 'react-router-dom'
 import { Coins } from "lucide-react";
 import LoginModal from './LoginModal';
+import { useSelector } from 'react-redux';
 
 const Navbar = () => {
   const navigate = useNavigate()
   const [openLogin, setOpenLogin] = useState(false)
-  let userData = false
+  const {userData} = useSelector(state=>state.user)
+  console.log(userData)
+  // let userData = false
   return (
     <>
       <motion.div
@@ -35,7 +38,7 @@ const Navbar = () => {
               <div className='hidden md:flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5
               border border-white/10 text-sm cursor-pointer hover:bg-white/10 transition'>
                <Coins size={14} className='text-yellow-400'/>
-               <span className='text-white'>200</span>
+               <span className='text-white'>{userData.credits}</span>
                <span className='text-zinc-200'>Credits</span>
                <span className='font-semibold text-zinc-200'>+</span>
               </div>
@@ -44,7 +47,8 @@ const Navbar = () => {
             { userData ? (
               <div className='relative'>
                 <button className='flex items-center'>
-                  <img src='https://ui-avatars.com/api/?name=Riveen+Peanuka' alt='' className='w-9 h-9 rounded-full border border-white/20
+                  <img referrerPolicy='no-referr'
+                  src={ userData? userData.avatar : 'https://ui-avatars.com/api/?name=Riveen+Peanuka'} alt='' className='w-9 h-9 rounded-full border border-white/20
                   object-cover hover:scale-105 transition' />
                 </button>
               </div>
